@@ -4,7 +4,9 @@ var petfinder = require('petfinder')('a839717f845b6ee822240f22a2b5a84c', '6debdb
 const ejs = require('ejs');
 const express = require('express');
 const app = express();
+require('dotenv').config();
 
+var PORTS = 3000 || process.env.PORT;
 //ejs setup
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
@@ -13,10 +15,11 @@ app.use(express.static("public"));
 const homeRoute = require('./routes/pages');
 //app.get('/', homeRoute.getHomePage);
 app.get('/', homeRoute.getDogs);
+// app.get('/')
 
 
 //app start
 
-app.listen(3000, function(){
+app.listen(PORTS || , function(){
   console.log(`Listening on Port 3000`);
 })

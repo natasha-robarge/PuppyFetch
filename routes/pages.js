@@ -7,14 +7,10 @@ const $ = require('jquery');
 
 //console.log(petfinder, 'petfinder')
 
-function getHomePage(req, res) {
-  res.render('home');
-}
-
 function getDogs(req, res) {
 
   console.log('GET DOGS!');
-  petfinder.findPet(78721, {}, function(err, animals) {
+  petfinder.findPet(787, {}, function(err, animals) {
     var result = [];
     animals.forEach(function(animal) {
       for(var prop in animal) {
@@ -25,7 +21,9 @@ function getDogs(req, res) {
     })
     //res.send(result);
     var photoArray = [];
-    console.log(result[0].animal.media.photos)
+
+    console.log(result[0])
+
     for(var i = 0; i < result.length; i++) {
       for(var key in result[i].animal.media.photos) {
         //console.log('I am here, ', result[i].animal.media.photos[key].pnt)
