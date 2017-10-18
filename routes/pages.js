@@ -7,6 +7,10 @@ const $ = require('jquery');
 
 //console.log(petfinder, 'petfinder')
 
+function getHomePage(req, res) {
+  res.render('home');
+}
+
 function getDogs(req, res) {
 
   console.log('GET DOGS!');
@@ -32,7 +36,7 @@ function getDogs(req, res) {
     }
     //console.log(photoArray);
     console.log('RENDERING DOGS!');
-    res.render('home', { animals: result, photos: photoArray });
+    res.render('search', { animals: result, photos: photoArray });
   });
 }
 
@@ -45,5 +49,6 @@ function getDogs(req, res) {
 // getDogNames();
 
 module.exports = {
+  getHomePage: getHomePage,
   getDogs: getDogs
 }

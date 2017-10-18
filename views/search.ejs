@@ -34,7 +34,26 @@
       <input type="text" name="breed" class ="navItem" value="" placeholder="Breed">
       <button onclick="window.location='/search'" class="navItem button searchButton" type="button">Search</button>
   </nav>
-
+  <div class='appendDiv'>
+    <% for(var i = 0; i < animals.length; i++) { %>
+        <h3>
+          <%= animals[i].animal.name %>
+        </h3>
+        <h5>
+          Gender: <%= animals[i].animal.sex %>
+        </h5>
+        <h5>
+          Age: <%= animals[i].animal.age %>
+        </h5>
+        <h5>
+          Contact: <%= animals[i].animal.contact.email %>
+        </h5>
+        <p>
+          <%= animals[i].animal.description %>
+          <img src='<%= photos[i] %>' class='photos'>
+        </p>
+    <% } %>
+  </div>
   <h1 class="mainH1">Search</h1>
   <div class="postPets"></div>
   <footer>
