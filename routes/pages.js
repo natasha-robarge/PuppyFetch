@@ -12,6 +12,7 @@ function getHomePage(req, res) {
 }
 
 function getDogs(req, res) {
+
   console.log('GET DOGS!');
   petfinder.findPet(78721, {}, function(err, animals) {
     var result = [];
@@ -23,11 +24,17 @@ function getDogs(req, res) {
       }
     })
     //res.send(result);
-
-    console.log(result[0].animal.name)
-
+    var photoArray = [];
+    console.log(result[0].animal.media.photos)
+    for(var i = 0; i < result.length; i++) {
+      for(var key in result[i].animal.media.photos) {
+        //console.log('I am here, ', result[i].animal.media.photos[key].pnt)
+        photoArray.push(result[i].animal.media.photos[key].pnt)
+      }
+    }
+    //console.log(photoArray);
     console.log('RENDERING DOGS!');
-    res.render('home', { animals: result });
+    res.render('home', { animals: result, photos: photoArray });
   });
 }
 
