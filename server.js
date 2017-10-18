@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 
-var PORTS = 3000 || process.env.PORT;
+var PORTS = 3000 || 'https://pupfetchrs.herokuapp.com/';
 //ejs setup
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
