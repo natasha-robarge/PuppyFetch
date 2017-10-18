@@ -13,13 +13,13 @@ app.use(express.static("public"));
 
 //app routes
 const homeRoute = require('./routes/pages');
-//app.get('/', homeRoute.getHomePage);
+
 app.get('/', homeRoute.getDogs);
 // app.get('/')
 
 
 //app start
 
-app.listen(PORTS || , function(){
+app.listen(PORTS, function(){
   console.log(`Listening on Port 3000`);
 })

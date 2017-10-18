@@ -10,7 +10,7 @@ const $ = require('jquery');
 function getDogs(req, res) {
 
   console.log('GET DOGS!');
-  petfinder.findPet(787, {}, function(err, animals) {
+  petfinder.findPet(78721, {}, function(err, animals) {
     var result = [];
     animals.forEach(function(animal) {
       for(var prop in animal) {
@@ -45,6 +45,5 @@ function getDogs(req, res) {
 // getDogNames();
 
 module.exports = {
-  getHomePage: getHomePage,
-  getDogs: getDogs,
+  getDogs: getDogs
 }
