@@ -12,6 +12,7 @@ function getHomePage(req, res) {
 }
 
 function getDogs(req, res) {
+  console.log('GET DOGS!');
   petfinder.findPet(78721, {}, function(err, animals) {
     var result = [];
     animals.forEach(function(animal) {
@@ -25,9 +26,8 @@ function getDogs(req, res) {
 
     console.log(result[0].animal.name)
 
-    for(var i = 0; i < result.length; i++) {
-      $('.appendDiv').append(`<h3> ${dogsArray[i].animal.name} </h3>`)
-    }
+    console.log('RENDERING DOGS!');
+    res.render('home', { animals: result });
   });
 }
 

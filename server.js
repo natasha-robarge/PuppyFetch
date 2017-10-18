@@ -11,10 +11,8 @@ app.use(express.static("public"));
 
 //app routes
 const homeRoute = require('./routes/pages');
-app.get('/', homeRoute.getHomePage);
-// app.get('/', function() {
-//   res.render(getDogs)
-// });
+//app.get('/', homeRoute.getHomePage);
+app.get('/', homeRoute.getDogs);
 
 
 //app start

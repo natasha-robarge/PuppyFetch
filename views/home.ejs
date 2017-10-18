@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PupFetchr</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
 
@@ -41,29 +41,11 @@
       <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
     </div>
     <div class='appendDiv'>
-      <%#
-      const petfinder = require('petfinder')('a839717f845b6ee822240f22a2b5a84c', '6debdbd0c30c89132579a1a722d970ac');
-      function getDogs(req, res) {
-        petfinder.findPet(78721, {}, function(err, animals) {
-          var result = [];
-          animals.forEach(function(animal) {
-            for(var prop in animal) {
-              if(animal[prop] === 'Dog') {
-                result.push({ 'animal': animal })
-              }
-            }
-          })
-          //res.send(result);
-
-          console.log(result[0].animal.name)
-
-          for(var i = 0; i < result.length; i++) {
-            $('.appendDiv').append(`<h3> ${dogsArray[i].animal.name} </h3>`)
-          }
-        });
-      }
-      getDogs();
-      %>
+      <% for(var i=0; i<animals.length; i++) { %>
+          <h3>
+              <%= animals[i].animal.name %>
+          </h3>
+      <% } %>
     </div>
     <footer>
       Created by The Slacker Stackers.  All rights reserved &#169; 2017
