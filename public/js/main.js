@@ -43,9 +43,9 @@ function handleImageClick(event) {
   console.log(event)
   let photo = document.querySelector('.photos');
 
-  // for(var key in event) {
+  
     console.log(photo.currentTarget, ' current');
-  // }
+
 }
 
     // get the text input field

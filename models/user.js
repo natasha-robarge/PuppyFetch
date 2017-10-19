@@ -2,13 +2,19 @@ const mongoose = require('mongoose');
 //const bcrypt = require('bcrypt');
 
 const UserSchema = new mongoose.Schema({
-  // firstName: String,
-  // lastName: String,
   email: String,
-  // passwordHash: String,
-  // location: String,//is this important? Only searching for dogs by zip code
-  savedPets: Array //save pets by id
+  savedPets: [String] //save pets by id
 });
+
+const User = mongoose.model('User', UserSchema);
+
+
+module.exports = User;
+
+// firstName: String,
+// lastName: String,
+// passwordHash: String,
+// location: String,//is this important? Only searching for dogs by zip code
 
 // UserSchema.statics.createSecure = function(email, password, callback) {
 //   const UserModel = this;
@@ -44,8 +50,6 @@ const UserSchema = new mongoose.Schema({
 //   });
 // }
 
-const User = mongoose.model('User', UserSchema);
+
 
 // User.createSecure();
-
-module.exports = User;
