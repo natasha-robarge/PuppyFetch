@@ -13,9 +13,9 @@ function createUser(req, res) {
       console.log(`Error ${err}`);
     } else {
       console.log(data)
-      res.send(data);
     }
   });
+  res.redirect('/');
 }
 
 function getOneUser(req, res) {
