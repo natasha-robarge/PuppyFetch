@@ -3,8 +3,8 @@
 $(document).ready(function(){
   console.log('Document ready');
 
-  $('.searchButton').on('click', handleSearch)
-
+  $('.searchButton').on('click', handleSearch);
+  $('.photos').on('click', handleImageClick);
 })
 
 
@@ -36,6 +36,16 @@ function onSuccess(json) {
 
 function onError() {
   var errorRes = console.log('Error! ');
+}
+
+function handleImageClick(event) {
+  event.preventDefault();
+  console.log(event)
+  let photo = document.querySelector('.photos');
+
+  // for(var key in event) {
+    console.log(photo.currentTarget, ' current');
+  // }
 }
 
     // get the text input field
