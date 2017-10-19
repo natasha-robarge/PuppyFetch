@@ -16,6 +16,7 @@ const homeRoute = require('./routes/pages');
 
 app.get('/', homeRoute.getHomePage);
 app.get('/search', homeRoute.getDogs);
+
 // app.get('/')
 
 

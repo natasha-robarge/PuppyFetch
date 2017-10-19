@@ -1,6 +1,6 @@
 //Dependencies
 const petfinder = require('petfinder')('a839717f845b6ee822240f22a2b5a84c', '6debdbd0c30c89132579a1a722d970ac');
-const $ = require('jquery');
+
 
 
 //functions
@@ -10,6 +10,11 @@ const $ = require('jquery');
 function getHomePage(req, res) {
   res.render('home');
 }
+
+// function buttonClick() {
+//     console.log('clicked');
+//     //res.render(getDogs);
+// }
 
 function getDogs(req, res) {
 
@@ -26,7 +31,7 @@ function getDogs(req, res) {
     //res.send(result);
     var photoArray = [];
 
-    console.log(result[0])
+    console.log(result[0].animal.contact.zip)
 
     for(var i = 0; i < result.length; i++) {
       for(var key in result[i].animal.media.photos) {
@@ -50,5 +55,6 @@ function getDogs(req, res) {
 
 module.exports = {
   getHomePage: getHomePage,
-  getDogs: getDogs
+  getDogs: getDogs,
+  // buttonClick: buttonClick
 }
