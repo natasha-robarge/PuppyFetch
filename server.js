@@ -8,15 +8,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
-mongoose.connection.openUri(process.env.DB_CONN, function(err, conn) {
-  if (err) {
-    console.log('error, ${err}');
-  } else {
-    console.log('Successfully connection');
-  }
-})
-
-var PORTS = 3000 || 'https://pupfetchrs.herokuapp.com/';
+mongoose.connect(process.env.MONGODB_URI || process.env.DB_CONN);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
@@ -46,6 +38,6 @@ app.get('/search/:zip', homeRoute.getDogs);
 
 //app start
 
-app.listen(PORTS, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log(`Listening on Port 3000`);
 })
