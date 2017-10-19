@@ -11,10 +11,13 @@ function getHomePage(req, res) {
   res.render('home');
 }
 
-// function buttonClick() {
-//     console.log('clicked');
-//     //res.render(getDogs);
-// }
+function getSignUpPage(req, res) {
+    res.render('signup');
+}
+
+function getCartPage(req, res) {
+  res.render('cart');
+}
 
 function getDogs(req, res) {
 
@@ -45,16 +48,10 @@ function getDogs(req, res) {
   });
 }
 
-// function getDogNames(getDogs) {
-//   var dogsArray = getDogs;
-//   for(var i = 0; i < dogsArray.length; i++) {
-//     $('.appendDiv').append(`<h3> ${dogsArray[i].animal.name} </h3>`)
-//   }
-// }
-// getDogNames();
 
 module.exports = {
   getHomePage: getHomePage,
   getDogs: getDogs,
-  // buttonClick: buttonClick
+  getSignUpPage: getSignUpPage,
+  getCartPage: getCartPage
 }

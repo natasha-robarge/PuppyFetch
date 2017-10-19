@@ -1,12 +1,16 @@
 //get json from server.js using ajax
 
+let zip = 78721;
+
 $(document).ready(function(){
   console.log('Document ready');
+  jsonData();
 })
-function jsonData() {
+
+function jsonData(zip) {
   $.ajax({
     method: 'GET',
-    url: '/search/' + zip,
+    url: '/search/', // + zip,
     success: onSuccess,
     error: onError
   })
@@ -16,30 +20,29 @@ function jsonData() {
 
 // var zip = document.querySelector('input #location');
 // console.log(zip)
-function onSuccess() {
-  console.log('Success!');
+function onSuccess(data) {
+  console.log('Success! ');
 }
 
-function onError() {
+function onError(data) {
   console.log('Error!');
 }
-
 
 function searchClick() {
   $('.searchButton').on('click', function(evt) {
     evt.preventDefault();
 
-    var zipCode = document.querySelector('#location');
-    console.log('Zipp ', zipCode.value)
+    var zip = document.querySelector('#location');
+    console.log('Zipp ', zip.value)
 
-    console.log(typeof zipCode.value)
+     //zip = parseInt(zip.value);
+
+    var dataCall = jsonData(zip)
+      console.log(animals, ' says hi')
+
+  });
 
     // get the text input field
-    // let zip = evt.querySelector('#location').value;
-             console.log(`I'm clicked!, `, zip)
-  });
-// searchClick();
-
     // store the search value
     // make an AJAX call with the search value
     // handle the response
