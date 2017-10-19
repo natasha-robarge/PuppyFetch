@@ -14,6 +14,9 @@
 
 
   </header>
+
+  <h1 class="mainH1">Search</h1>
+
    <nav class="search">
       <input type="text" id="location" class="navItem" name="location" placeholder="Zip Code (required)" required="required" title="Location is required.">
 
@@ -34,31 +37,34 @@
       <input type="text" name="breed" class ="navItem" value="" placeholder="Breed">
       <button class="navItem button searchButton" type="button" onclick="location.href='/search/'+ $('#location').val()">Search</button>
   </nav>
+
   <div class='appendDiv'>
-    <% for(var i = 0; i < animals.length; i++) { %>
-        <h3>
-          <%= animals[i].animal.name %>
-        </h3>
-        <h5>
-          Gender: <%= animals[i].animal.sex %>
-        </h5>
-        <h5>
-          Age: <%= animals[i].animal.age %>
-        </h5>
-        <h5>
-          Contact: <%= animals[i].animal.contact.email %>
-        </h5>
-        <h6>
-          ZIP: <%= animals[i].animal.contact.zip %>
-        </h6>
-        <p>
-          <%= animals[i].animal.description %>
-          <img src='<%= photos[i] %>' class='photos'>
-        </p>
-    <% } %>
-  </div>
-  <h1 class="mainH1">Search</h1>
-  <div class="postPets"></div>
+      <div class="detail">
+        <% for(var i = 0; i < animals.length; i++) { %>
+            <!-- <p class="petDetails"> -->
+              <div class="detailcontainer">
+                <h3>
+                  <%= animals[i].animal.name %>
+                </h3>
+                <h5>
+                  Gender: <%= animals[i].animal.sex %>
+                </h5>
+                <h5>
+                  Age: <%= animals[i].animal.age %>
+                </h5>
+                <h5>
+                  Contact: <%= animals[i].animal.contact.email %>
+                </h5>
+                <h5>
+                  <%= animals[i].animal.description %>
+                </h5>
+                <img src='<%= photos[i] %>' class='photos'>
+              </div>
+          <!-- </p> -->
+        <% } %>
+      </div>
+    </div>
+
   <footer>
     Created by The Slacker Stackers.  All rights reserved &#169; 2017
   </footer>

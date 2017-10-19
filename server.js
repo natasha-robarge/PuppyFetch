@@ -16,12 +16,17 @@ const homeRoute = require('./routes/pages');
 
 app.get('/', homeRoute.getHomePage);
 //app.get('/search', homeRoute.getSearchPage);
+
 app.get('/signup', homeRoute.getSignUpPage);
+
+//app.post('/signup', )
+
+
+
+//Get dogs by zip code and grab cart page
 app.get('/cart', homeRoute.getCartPage);
 app.get('/search/:zip', homeRoute.getDogs);
 
-
-// app.get('/')
 
 
 //app start
