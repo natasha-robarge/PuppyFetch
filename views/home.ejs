@@ -14,7 +14,7 @@
       <input class="login" type="text" name="username" placeholder="Email Address">
       <input class="login" type="password" name="password" placeholder="Password">
       <button class="login button" type="button">Login</button>
-      <button class="login button" type="button" onclick="window.location='/signup'">Sign Up</button>
+      <a href="/signup"><button class="login button" type="button">Sign Up</button></a>
     </header>
 
     <nav class="search">
@@ -35,7 +35,7 @@
         </select>
 
         <input type="text" name="breed" class ="navItem" value="" placeholder="Breed">
-        <a href="/search"><button class="navItem button searchButton" onclick="searchClick(event)" type="button">Search</button></a>
+        <button class="navItem button searchButton" type="button" onclick="location.href='/search/'+ $('#location').val()">Search</button>
     </nav>
     <h1 class="mainH1">PupFetchr</h1>
     <div class="box">

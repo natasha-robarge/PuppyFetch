@@ -15,7 +15,11 @@ app.use(express.static("public"));
 const homeRoute = require('./routes/pages');
 
 app.get('/', homeRoute.getHomePage);
-app.get('/search', homeRoute.getDogs);
+//app.get('/search', homeRoute.getSearchPage);
+app.get('/signup', homeRoute.getSignUpPage);
+app.get('/cart', homeRoute.getCartPage);
+app.get('/search/:zip', homeRoute.getDogs);
+
 
 // app.get('/')
 

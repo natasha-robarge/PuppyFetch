@@ -7,7 +7,7 @@
 </head>
 <body>
   <header class="loggedInHeader">
-    <a href="/home" class="logoTopLeft"> PupFetchr </a>
+    <a href="/" class="logoTopLeft"> PupFetchr </a>
 
 
   </header><!-- /header -->
@@ -30,11 +30,11 @@
       </select>
 
       <input type="text" name="breed" class ="navItem" value="" placeholder="Breed">
-      <button onclick="window.location='/search'" class="navItem button searchButton" type="button">Search</button>
+      <button class="navItem button searchButton" type="button" onclick="location.href='/search/'+ $('#location').val()">Search</button>
   </nav>
   <h1 class="createAccountH1">Create Account</h1>
   <div class="signUpDiv">
-    <form action="/home" method="post" accept-charset="utf-8" class= "signUpForm">
+    <form action="/" method="post" accept-charset="utf-8" class= "signUpForm">
 
 
         <!-- <label for="firstName">First Name</label> -->

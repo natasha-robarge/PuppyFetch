@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Search Page</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="/js/main.js"></script>
 </head>
 <body>
   <header class="loggedInHeader">
-    <a href="index.html" class="logoTopLeft"> PupFetchr </a>
+    <a href="/" class="logoTopLeft"> PupFetchr </a>
 
 
   </header>
@@ -32,7 +32,7 @@
       </select>
 
       <input type="text" name="breed" class ="navItem" value="" placeholder="Breed">
-      <button onclick="searchClick()" class="navItem button searchButton" type="button">Search</button>
+      <button class="navItem button searchButton" type="button" onclick="location.href='/search/'+ $('#location').val()">Search</button>
   </nav>
   <div class='appendDiv'>
     <% for(var i = 0; i < animals.length; i++) { %>
