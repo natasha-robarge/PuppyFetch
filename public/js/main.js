@@ -8,26 +8,33 @@ $(document).ready(function(){
 })
 
 
-// var zip = document.querySelector('input #location');
-// console.log(zip)
-
 function handleSearch(evt) {
   evt.preventDefault();
   console.log('Clicked');
+  // get the text input field
+  // store the search value
   let zip = document.querySelector('#location');
-  console.log('Zipp ', zip.value)
+  // console.log('Zipp ', zip.value)
 
    zip = parseInt(zip.value);
-   console.log('Zip num ', zip)
+  //  console.log('Zip num ', zip)
 
-     $.ajax({
-       method: 'GET',
-       url: '/search/' + zip,
-       data: 'json',
-       dataType: '',
-       success: onSuccess,
-       error: onError
-     })
+let age = document.querySelector('.age');
+let gender = document.querySelector('.gender');
+let breed = document.querySelector('.breed').toLowerCase();
+
+// make an AJAX call with the search value
+  function petData(data) {
+    $.ajax({
+      method: 'GET',
+      url: '/search/' + zip + '/' || + age + '/' || + gender + '/' || + breed + '/',
+      data: 'json',
+      dataType: '',
+      success: onSuccess,
+      error: onError
+    })
+  }
+     // handle the response
 };
 
 function onSuccess(json) {
@@ -37,18 +44,3 @@ function onSuccess(json) {
 function onError() {
   var errorRes = console.log('Error! ');
 }
-
-function handleImageClick(event) {
-  event.preventDefault();
-  console.log(event)
-  let photo = document.querySelector('.photos');
-
-  
-    console.log(photo.currentTarget, ' current');
-
-}
-
-    // get the text input field
-    // store the search value
-    // make an AJAX call with the search value
-    // handle the response
