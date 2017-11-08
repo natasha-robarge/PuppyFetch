@@ -76,16 +76,16 @@ function getDogs(req, res) {
   });
 }
 
-function newLoginSession(req, res) {
-  User.authenticate(req.body.email, req.body.password, function(err, user) {
-    if (err) {
-      res.status(407).send(`Error processing login: ${err.message}`);
-    } else {
-      user.push(req.body.email, req.body.password);
-      res.json(user);
-    }
-  });
-}
+// function newLoginSession(req, res) {
+//   User.authenticate(req.body.email, req.body.password, function(err, user) {
+//     if (err) {
+//       res.status(407).send(`Error processing login: ${err.message}`);
+//     } else {
+//       user.push(req.body.email, req.body.password);
+//       res.json(user);
+//     }
+//   });
+// }
 
 module.exports = {
   getHomePage: getHomePage,
@@ -93,5 +93,5 @@ module.exports = {
   getSignUpPage: getSignUpPage,
   getCartPage: getCartPage,
   getSearchPage: getSearchPage,
-  newLoginSession: newLoginSession
+  // newLoginSession: newLoginSession
 }
